@@ -1,25 +1,13 @@
-﻿using System.Text;
-using DesafioProjetoHospedagem.Models;
+﻿using DesafioPOO.Models;
 
-Console.OutputEncoding = Encoding.UTF8;
+Iphone iphone = new Iphone("99990-0000", "Iphone 11", "123456789", 5);
+iphone.Ligar();
+iphone.ReceberLigacao();
+iphone.InstalarAplicativo("Joginho");
 
-// Cria os modelos de hóspedes e cadastra na lista de hóspedes
-List<Pessoa> hospedes = new List<Pessoa>();
+Nokia nokia = new Nokia("99990-1111", "Tijolão", "987654321", 1);
+nokia.Ligar();
+nokia.ReceberLigacao();
+nokia.InstalarAplicativo("Editor de fotos");
 
-Pessoa p1 = new Pessoa(nome: "Luiz", sobrenome: "Souza");
-Pessoa p2 = new Pessoa(nome: "Juliana", sobrenome: "Batista");
-
-hospedes.Add(p1);
-hospedes.Add(p2);
-
-// Cria a suíte
-Suite suite = new Suite(tipoSuite: "Premium", capacidade: 3, valorDiaria: 100);
-
-// Cria uma nova reserva, passando a suíte e os hóspedes
-Reserva reserva = new Reserva(diasReservados: 11);
-reserva.CadastrarSuite(suite);
-reserva.CadastrarHospedes(hospedes);
-
-// Exibe a quantidade de hóspedes e o valor da diária
-Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes()}");
-Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria()}");
+Console.ReadKey();
